@@ -1,5 +1,5 @@
 
-// EssaiOpencvDlg.cpp : fichier d'implémentation
+// EssaiOpencvDlg.cpp : fichier d'implÃ©mentation
 //
 
 #include "stdafx.h"
@@ -16,14 +16,14 @@
 using namespace cv;
 
 
-// boîte de dialogue CAboutDlg utilisée pour la boîte de dialogue 'À propos de' pour votre application
+// boÃ®te de dialogue CAboutDlg utilisÃ©e pour la boÃ®te de dialogue 'Ã€ propos de' pour votre application
 
 class CAboutDlg : public CDialogEx
 {
 public:
 	CAboutDlg();
 
-// Données de boîte de dialogue
+// DonnÃ©es de boÃ®te de dialogue
 #ifdef AFX_DESIGN_TIME
 	enum { IDD = IDD_ABOUTBOX };
 #endif
@@ -31,7 +31,7 @@ public:
 	protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // Prise en charge de DDX/DDV
 
-// Implémentation
+// ImplÃ©mentation
 protected:
 	DECLARE_MESSAGE_MAP()
 };
@@ -49,7 +49,7 @@ BEGIN_MESSAGE_MAP(CAboutDlg, CDialogEx)
 END_MESSAGE_MAP()
 
 
-// boîte de dialogue CEssaiOpencvDlg
+// boÃ®te de dialogue CEssaiOpencvDlg
 
 
 
@@ -86,9 +86,9 @@ BOOL CEssaiOpencvDlg::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
 
-	// Ajouter l'élément de menu "À propos de..." au menu Système.
+	// Ajouter l'Ã©lÃ©ment de menu "Ã€ propos de..." au menu SystÃ¨me.
 
-	// IDM_ABOUTBOX doit se trouver dans la plage des commandes système.
+	// IDM_ABOUTBOX doit se trouver dans la plage des commandes systÃ¨me.
 	ASSERT((IDM_ABOUTBOX & 0xFFF0) == IDM_ABOUTBOX);
 	ASSERT(IDM_ABOUTBOX < 0xF000);
 
@@ -106,14 +106,14 @@ BOOL CEssaiOpencvDlg::OnInitDialog()
 		}
 	}
 
-	// Définir l'icône de cette boîte de dialogue.  L'infrastructure effectue cela automatiquement
-	//  lorsque la fenêtre principale de l'application n'est pas une boîte de dialogue
-	SetIcon(m_hIcon, TRUE);			// Définir une grande icône
-	SetIcon(m_hIcon, FALSE);		// Définir une petite icône
+	// DÃ©finir l'icÃ´ne de cette boÃ®te de dialogue.  L'infrastructure effectue cela automatiquement
+	//  lorsque la fenÃªtre principale de l'application n'est pas une boÃ®te de dialogue
+	SetIcon(m_hIcon, TRUE);			// DÃ©finir une grande icÃ´ne
+	SetIcon(m_hIcon, FALSE);		// DÃ©finir une petite icÃ´ne
 
-	// TODO: ajoutez ici une initialisation supplémentaire
+	// TODO: ajoutez ici une initialisation supplÃ©mentaire
 
-	return TRUE;  // retourne TRUE, sauf si vous avez défini le focus sur un contrôle
+	return TRUE;  // retourne TRUE, sauf si vous avez dÃ©fini le focus sur un contrÃ´le
 }
 
 void CEssaiOpencvDlg::OnSysCommand(UINT nID, LPARAM lParam)
@@ -129,19 +129,19 @@ void CEssaiOpencvDlg::OnSysCommand(UINT nID, LPARAM lParam)
 	}
 }
 
-// Si vous ajoutez un bouton Réduire à votre boîte de dialogue, vous devez utiliser le code ci-dessous
-//  pour dessiner l'icône.  Pour les applications MFC utilisant le modèle Document/Vue,
+// Si vous ajoutez un bouton RÃ©duire Ã  votre boÃ®te de dialogue, vous devez utiliser le code ci-dessous
+//  pour dessiner l'icÃ´ne.  Pour les applications MFC utilisant le modÃ¨le Document/Vue,
 //  cela est fait automatiquement par l'infrastructure.
 
 void CEssaiOpencvDlg::OnPaint()
 {
 	if (IsIconic())
 	{
-		CPaintDC dc(this); // contexte de périphérique pour la peinture
+		CPaintDC dc(this); // contexte de pÃ©riphÃ©rique pour la peinture
 
 		SendMessage(WM_ICONERASEBKGND, reinterpret_cast<WPARAM>(dc.GetSafeHdc()), 0);
 
-		// Centrer l'icône dans le rectangle client
+		// Centrer l'icÃ´ne dans le rectangle client
 		int cxIcon = GetSystemMetrics(SM_CXICON);
 		int cyIcon = GetSystemMetrics(SM_CYICON);
 		CRect rect;
@@ -149,7 +149,7 @@ void CEssaiOpencvDlg::OnPaint()
 		int x = (rect.Width() - cxIcon + 1) / 2;
 		int y = (rect.Height() - cyIcon + 1) / 2;
 
-		// Dessiner l'icône
+		// Dessiner l'icÃ´ne
 		dc.DrawIcon(x, y, m_hIcon);
 	}
 	else
@@ -158,8 +158,8 @@ void CEssaiOpencvDlg::OnPaint()
 	}
 }
 
-// Le système appelle cette fonction pour obtenir le curseur à afficher lorsque l'utilisateur fait glisser
-//  la fenêtre réduite.
+// Le systÃ¨me appelle cette fonction pour obtenir le curseur Ã  afficher lorsque l'utilisateur fait glisser
+//  la fenÃªtre rÃ©duite.
 HCURSOR CEssaiOpencvDlg::OnQueryDragIcon()
 {
 	return static_cast<HCURSOR>(m_hIcon);
@@ -266,7 +266,7 @@ void CEssaiOpencvDlg::OnBnClickedButton4() //Knn
 	Mat Echantillon2(1, 2, CV_32FC1);
 	RNG rng(12345);
 
-	// Pour générer les données aléatoires
+	// Pour gÃ©nÃ©rer les donnÃ©es alÃ©atoires
 	rng.fill(trainData1.col(0), RNG::NORMAL, Scalar(50), Scalar(80)); 
 	rng.fill(trainData1.col(1), RNG::NORMAL, Scalar(150), Scalar(80)); 
 	rng.fill(trainData2.col(0), RNG::NORMAL, Scalar(300), Scalar(80)); 
@@ -282,10 +282,10 @@ void CEssaiOpencvDlg::OnBnClickedButton4() //Knn
 	Mat PlusProche(1, K, CV_32FC1);
 	Mat Reponse, Dist;
 
-	// déclaration du modele et lancement d'appretissage
+	// dÃ©claration du modele et lancement d'appretissage
 	CvKNearest knn(trainDataGlobal, TrainClasseG, Reponse, false, K);
 	
-	// Pour tracer la frontière (on mettant les pixels de chaque classes en une couleur dans l'image)
+	// Pour tracer la frontiÃ¨re (on mettant les pixels de chaque classes en une couleur dans l'image)
 	for (li = 0; li < Img.rows; li++)
 	{
 		for (col = 0; col < Img.cols; col++)
@@ -306,7 +306,7 @@ void CEssaiOpencvDlg::OnBnClickedButton4() //Knn
 		}
 	}
 
-	// Pour placer les données d'apprentissage
+	// Pour placer les donnÃ©es d'apprentissage
 	for (int i = 0; i < train_sample_count; i++) {
 		CvPoint pt;
 		pt.x = trainData1.at<float>(i, 0);
@@ -391,46 +391,46 @@ void CEssaiOpencvDlg::OnBnClickedButton5() // SVM des points
 	int li = 0;
 	int	col = 0;
 	int	k, accuracy;
-	// déclaration des dimensions des tableaux
+	// dÃ©claration des dimensions des tableaux
 	int train_sample_count = 100;
 	int test_sample_count = 200;
 
 
-	// déclaration des tableaux de données d'apprentissage
+	// dÃ©claration des tableaux de donnÃ©es d'apprentissage
 	Mat trainData1(train_sample_count, 2, CV_32FC1);
 	Mat trainData2(train_sample_count, 2, CV_32FC1);
 
 
-	// déclaration des tableaux données de tests 
+	// dÃ©claration des tableaux donnÃ©es de tests 
 	Mat testData1(test_sample_count, 2, CV_32FC1);
 	Mat testData2(test_sample_count, 2, CV_32FC1);
 
 
-	// déclaration des deux classes pour l'apprentissage et pour les tests : une classe aura 0 et l'autre aura 1
+	// dÃ©claration des deux classes pour l'apprentissage et pour les tests : une classe aura 0 et l'autre aura 1
 	Mat testClasses1 = Mat::zeros(test_sample_count, 1, CV_32FC1);
 	Mat testClasses2 = Mat::ones(test_sample_count, 1, CV_32FC1);
 	Mat TrainClasses1 = Mat::zeros(train_sample_count, 1, CV_32FC1);
 	Mat TrainClasses2 = Mat::ones(train_sample_count, 1, CV_32FC1);
 
-	// déclaration des matrices pour le regroupement des données et des classes
+	// dÃ©claration des matrices pour le regroupement des donnÃ©es et des classes
 	Mat trainDataGlobal;
 	Mat TrainClasseG;
 	Mat testDataGlobal;
 
 
-	// création d'une image noire
+	// crÃ©ation d'une image noire
 	Mat Img = Mat::zeros(500, 500, CV_8UC3);
 	Mat Img2 = Mat::zeros(500, 500, CV_8UC3);
 
-	// Déclaration des échantillons avec deux colones ( x et y )
+	// DÃ©claration des Ã©chantillons avec deux colones ( x et y )
 	Mat Echantillon(1, 2, CV_32FC1);
 	Mat Echantillon1(1, 2, CV_32FC1);
 	Mat Echantillon2(1, 2, CV_32FC1);
 
-	// Random number generator pour générer des numéros alétoires
+	// Random number generator pour gÃ©nÃ©rer des numÃ©ros alÃ©toires
 	RNG rng(12345);
 
-	// Remplir les données de test et d'apprentissage avec la loi normale
+	// Remplir les donnÃ©es de test et d'apprentissage avec la loi normale
 	rng.fill(trainData1.col(0), RNG::NORMAL, Scalar(50), Scalar(80)); 
 	rng.fill(trainData1.col(1), RNG::NORMAL, Scalar(150), Scalar(80)); 
 	rng.fill(trainData2.col(0), RNG::NORMAL, Scalar(300), Scalar(80));
@@ -440,13 +440,13 @@ void CEssaiOpencvDlg::OnBnClickedButton5() // SVM des points
 	rng.fill(testData2.col(0), RNG::NORMAL, Scalar(300), Scalar(80));
 	rng.fill(testData2.col(1), RNG::NORMAL, Scalar(190), Scalar(80));
 
-	// concaténation des matrices
+	// concatÃ©nation des matrices
 	vconcat(trainData1, trainData2, trainDataGlobal);
 	vconcat(TrainClasses1, TrainClasses2, TrainClasseG);
 	vconcat(testData1, testData2, testDataGlobal);
 
 
-	// déclaration des paramètres du SVM
+	// dÃ©claration des paramÃ¨tres du SVM
 	CvSVMParams params;
 	params.svm_type = CvSVM::C_SVC;
 	params.kernel_type = CvSVM::RBF;
@@ -454,7 +454,7 @@ void CEssaiOpencvDlg::OnBnClickedButton5() // SVM des points
 	params.term_crit = cvTermCriteria(TermCriteria::MAX_ITER, 100, 1e-6);
 	params.C = 0.1; 
 
-	// déclaration du classifieur SVM
+	// dÃ©claration du classifieur SVM
 	CvSVM SVM;
 	SVM.train_auto(trainDataGlobal, TrainClasseG, Mat(), Mat(), params); 
 	int VP=0, FP=0, VN=0, FN=0;
@@ -515,7 +515,7 @@ void CEssaiOpencvDlg::OnBnClickedButton5() // SVM des points
 
 	}
 
-	// Cette partie, pour tracer la frontière
+	// Cette partie, pour tracer la frontiÃ¨re
 	for (li = 0; li < Img2.rows; li++)
 	{
 		for (col = 0; col < Img2.cols; col++)
@@ -535,7 +535,7 @@ void CEssaiOpencvDlg::OnBnClickedButton5() // SVM des points
 			}
 		}
 	}
-	// Cette partie pour représenter les données de test
+	// Cette partie pour reprÃ©senter les donnÃ©es de test
 	for (int i = 0; i < test_sample_count; i++)
 	{
 		CvPoint pt;
